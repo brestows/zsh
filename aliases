@@ -1,0 +1,113 @@
+#-- Make life easier --#
+alias s="sudo"
+alias c="clear"
+alias e="exit"
+alias v="vim"
+alias V="sudo vim"
+alias cdb="cd ./.."
+alias sudu=sudo
+alias arm="/home/intrntbrn/toolchain/arm-none-eabi/bin/arm-none-eabi-gcc"
+alias zshrc="geany ~/.zshrc"
+alias msh="./msh.o"
+
+
+alias pdf=zathura
+alias alpine="xterm -e alpine"
+alias steam="wine ~/.wine/drive_c/Programme\ \(x86\)/Steam/Steam.exe"
+alias qiv=mirage
+
+
+#-- theming --#
+alias zshrc="medit -t ~/.zshrc"
+alias zshalias="geany ~/.config/zsh/aliases"
+alias xres="geany ~/.Xresources"
+
+#-- shortcuts --#
+alias ooad="cd ~/Dropbox/SS2011/WS2011/OOAD"
+alias pad2="cd ~/Dropbox/SS2011/WS2011/PAD2"
+alias workspace="cd ~/Workspace"
+alias workspaced="cd ~/Dropbox/WORKSPACE"
+alias jd="cd ~/HDD/Downloads_JD"
+alias movies="cd ~/HDD/Film"
+alias serien="cd ~/HDD/Serien"
+alias music="cd ~/HDD/Musik"
+alias ntb="cd ~/Workspace/NetBeansProjects"
+alias dropbox="cd ~/Dropbox"
+alias aw="cd /etc/xdg/awesome"
+alias themes="cd /usr/share/awesome/themes/"
+alias bbt="cd ~/HDD/Serien/Big_Bang_Theory/"
+
+
+#-- Simple shell aliases --#
+alias grep="grep --color=auto"
+alias l="ls --color=always -aF"
+alias ls="ls --color=always -F"
+alias ll="ls --color=always -l"
+alias lg="ls -a | grep --color=auto"
+alias mkdir="mkdir -p"
+alias mv="mv -i"
+alias tree="tree -L 2 -d -C"
+alias free="free -m"
+alias df="df -h"
+
+
+#-- Global --#
+alias -g L="| less"
+alias -g H="| head"
+alias -g T="| tail"
+alias -g G="| grep --color=auto"
+alias -g N=">/dev/null"
+
+#-- Suffix --#
+alias -s html=$BROWSER
+alias -s de=$BROWSER
+alias -s to=$BROWSER
+alias -s com=$BROWSER
+alias -s org=$BROWSER
+alias -s net=$BROWSER
+alias -s {png,jpg,PNG,JPG,jpeg,JPEG}=mirage
+alias -s {pdf,PDF}=epdfview
+alias -s {doc,txt,TXT,lua,cpp,c,conf,ini,c}=$EDITOR
+alias -s avi=gnome-mplayer
+alias -s wmv=gnome-mplayer
+alias -s xvid=gnome-mplayer
+alias -s mkv=gnome-mplayer
+
+#-- Reload Configs --#
+alias xmerge="xrdb -load ~/.Xresources"
+alias zload=". ~/.zshrc"
+
+#-- Pacman --#
+alias pacman=pacman-color
+alias sps="sudo pacman-color -S"
+alias spss="sudo pacman-color -Ss"
+alias spr="sudo pacman-color -Rns"
+alias spq="sudo pacman-color -Q"
+alias spu="sudo pacman-color -Syu"
+
+#-- Power --#
+alias shutdown="sudo shutdown -h 0"
+alias reboot="sudo reboot"
+alias suspend="sudo pm-suspend"
+
+#-- Misc. --#
+alias mplayer="mplayer -msgcolor -msgmodule"
+alias dbx="sudo kill all dropboxd & dropboxd &"
+alias jabber=mcabber
+alias yt=youtube-viewer
+alias colorscript="~/bin/colors.sh"
+alias color="~/bin/color.sh"
+alias funtoo="bash ~/bin/funtoo"
+alias netbeans="netbeans --laf com.sun.java.swing.plaf.gtk.GTKLookAndFeel -J-Dswing.aatext=true -J-Dawt.useSystemAAFontSettings=on"
+alias dualview="xrandr --output HDMI1 --right-of LVDS1"
+
+alias imageupload=imgurbash
+alias imgu=imgurbash
+alias mp3=ncmpcpp
+
+alias gedit="geany"
+
+alias stick="sudo mount /dev/sdc1/ /home/intrntbrn/STICK"
+alias ustick="sudo umount /dev/sdc1/"
+
+alias tv="vlc ~/stream.m3u"

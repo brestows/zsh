@@ -1,0 +1,67 @@
+#-- Random functions --#
+function extract {
+    case $1 in
+        *.tar.bz2)  tar xvjf $1;;
+        *.tar.gz)   tar xvzf $1;;
+        *.tar.xz)   tar xvJf $1;;
+        *.xz)       unxz $1;;
+        *.bz2)      bunzip2 $1;;
+        *.gz)       gunzip $1;;
+        *.tar)      tar xvf $1;;
+        *.tbz2)     tar xvjf $1;;
+        *.tgz)      tar xvzf $1;;
+        *.Z)        uncompress $1;;
+        *.zip)      unzip $1;;
+        *.rar)      unrar e $1;;
+        *)          echo "Cannot extract $1."
+    esac
+}
+
+function ncmpd {
+    echo "$*\nclose" | netcat localhost 6600 #>/dev/null
+}
+
+function acpi_call {
+    orig=$(pwd)
+    cd ~/src/acpi_call
+    
+    make clean && make
+    sudo mkdir /lib/modules/$(uname -r)/kernel/drivers/acpi
+    sudo cp acpi_call.ko /lib/modules/$(uname -r)/kernel/drivers/acpi/
+
+    cd /lib/modules/$(uname -r)
+    sudo depmod -a
+    sudo modprobe acpi_call
+
+    cd $orig
+}
+
+function mathhw {
+	curl -s http://www.math.ufl.edu/~aipew/ | grep $1 | grep -v Test | awk -F'[><]' '{print $2}'
+}
+
+#-- Shamelessly stolen from Milomouse --#
+function cpf {
+    if [[ -d $*[-1] ]]; then
+        cp $* && $*[-1]
+    elif [[ -d ${*[-1]%/*} ]]; then
+        cp $* && cd ${*[-1]%/*}
+    fi
+}
+
+function mvf {
+    if [[ -d $*[-1] ]]; then
+        mv $* && $*[-1]
+    elif [[ -d ${*[-1]%/*} ]]; then
+        mv $* && cd ${*[-1]%/*}
+    fi
+}
+
+function 256co {
+    for line in {0..15}; do for col in {0..15}; do
+        local code=$(( $col * 16 + ${line} ))
+        printf $'\e[38;05;%dm %03d' ${code} ${code}
+    done
+    print ; done
+}
+
